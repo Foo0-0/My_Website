@@ -15,6 +15,50 @@
   }
 </script>
   <body>
+    <div id="bootscreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:black;color:#00ff41;font-family:monospace;font-size:18px;padding:40px;z-index:999;box-sizing:border-box;">
+  <div id="boottext"></div>
+</div>
+
+<script>
+  const lines = [
+    "VAULT-TEC INDUSTRIES",
+    "ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM",
+    "COPYRIGHT 2075-2077 ROBCO INDUSTRIES",
+    "------------------------",
+    "LOADING SYSTEM...",
+    "CHECKING MEMORY... OK",
+    "CHECKING HARD DRIVE... OK", 
+    "INITIALIZING VAULT SYSTEMS... OK",
+    "WELCOME TO VAULT-TEC TERMINAL",
+    "------------------------",
+    "ACCESS GRANTED",
+  ];
+
+  let lineIndex = 0;
+  let charIndex = 0;
+  const boottext = document.getElementById("boottext");
+
+  function type() {
+    if (lineIndex < lines.length) {
+      if (charIndex < lines[lineIndex].length) {
+        boottext.innerHTML += lines[lineIndex][charIndex];
+        charIndex++;
+        setTimeout(type, 30);
+      } else {
+        boottext.innerHTML += "<br>";
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(type, 200);
+      }
+    } else {
+      setTimeout(() => {
+        document.getElementById("bootscreen").style.display = "none";
+      }, 1000);
+    }
+  }
+
+  type();
+</script>
     <h1>My Website</h1>
     <div class="box">
       <header>
