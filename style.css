@@ -40,3 +40,9 @@ footer {
     grid-column: 1 / 3;
     padding: 15px;
 }
+nav p {
+  cursor: pointer;
+}
+nav p:hover {
+  color: white;
+}
