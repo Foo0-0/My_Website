@@ -4,6 +4,16 @@
     <title>My Website</title>
     <link rel="stylesheet" href="style.css">
   </head>
+  <script>
+  function toggle(id) {
+    var el = document.getElementById(id);
+    if (el.style.display === 'none') {
+      el.style.display = 'block';
+    } else {
+      el.style.display = 'none';
+    }
+  }
+</script>
   <body>
     <h1>My Website</h1>
     <div class="box">
@@ -11,13 +21,26 @@
         <h2>VAULT-TEC TERMINAL</h2>
       </header>
       <nav>
-        <p>HOME</p>
-        <p>ABOUT</p>
-        <p>CONTACT</p>
-      </nav>
+  <p onclick="toggle('about')">[ ABOUT ]</p>
+  <p onclick="toggle('contact')">[ CONTACT ]</p>
+</nav>
+<main>
+  <h3>Welcome, Vault Dweller</h3>
+  <p>Website voor opleiding project.</p>
+  
+  <div id="about" style="display:none">
+    <h3>// ABOUT //</h3>
+    <p>Hoi,ik heet Jonasz en mijn interesse zijn,games,muziek,hobby-modelbouw.</p>
+  </div>
+  
+  <div id="contact" style="display:none">
+    <h3>// CONTACT //</h3>
+    <p>mijn e-mail voor contact:241498@student.scalda.nl</p>
+  </div>
+</main>
       <main>
         <h3>Welcome, Vault Dweller</h3>
-        <p>This is my school project website.</p>
+        <p>Website voor opleiding project.</p>
       </main>
       <footer>
         <p>VAULT-TEC CORP © 2077</p>
