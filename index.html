@@ -1,125 +1,114 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SCHOOL PROJECT </title>
+    <title>SCHOOL PROJECT</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <script>
-  function toggle(id) {
-    var el = document.getElementById(id);
-    if (el.style.display === 'none') {
-      el.style.display = 'block';
-    } else {
-      el.style.display = 'none';
-    }
-  }
-</script>
   <body>
     <div id="bootscreen" style="position:fixed;top:0;left:0;width:100%;height:100%;background:black;color:#00ff41;font-family:monospace;font-size:18px;padding:40px;z-index:999;box-sizing:border-box;">
-  <div id="boottext"></div>
-</div>
+      <div id="boottext"></div>
+    </div>
 
-<script>
-  const lines = [
-    "VAULT-TEC INDUSTRIES",
-    "ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM",
-    "COPYRIGHT 2075-2077 ROBCO INDUSTRIES",
-    "------------------------",
-    "LOADING SYSTEM...",
-    "CHECKING MEMORY... OK",
-    "CHECKING HARD DRIVE... OK", 
-    "INITIALIZING VAULT SYSTEMS... OK",
-    "WELCOME TO VAULT-TEC TERMINAL",
-    "------------------------",
-    "ACCESS GRANTED",
-  ];
-
-  let lineIndex = 0;
-  let charIndex = 0;
-  const boottext = document.getElementById("boottext");
-
-  function type() {
-    if (lineIndex < lines.length) {
-      if (charIndex < lines[lineIndex].length) {
-        boottext.innerHTML += lines[lineIndex][charIndex];
-        charIndex++;
-        setTimeout(type, 30);
-      } else {
-        boottext.innerHTML += "<br>";
-        lineIndex++;
-        charIndex = 0;
-        setTimeout(type, 200);
-      }
-    } else {
-      setTimeout(() => {
-        document.getElementById("bootscreen").style.display = "none";
-      }, 1000);
-    }
-  }
-
-  type();
-</script>
-    <h1> SCHOOL PROJECT </h1>
+    <h1>SCHOOL PROJECT</h1>
     <div class="box">
       <header>
         <h2>VAULT-TEC TERMINAL</h2>
       </header>
       <nav>
-  <p onclick="toggle('about')">[ ABOUT ]</p>
-  <p onclick="toggle('contact')">[ CONTACT ]</p>
-</nav>
-<main>
-  <h3>Welcome, Vault Dweller</h3>
-  <p>Website voor opleiding project.</p>
-  
-  <div id="about" style="display:none">
-    <h3>// ABOUT //</h3>
-    <p>Hoi, ik heet Jonasz en mijn interesses zijn games, muziek en hobby-modelbouw. Ik heb ook interesse in programmeren. Deze website is mijn portfolio. Ik wil mezelf verbeteren tijdens mijn opleiding op niveau 4. </p>
-  </div>
-  
-  <div id="contact" style="display:none">
-    <h3>// CONTACT //</h3>
-    <p>mijn e-mail voor contact:241498@student.scalda.nl</p>
-  </div>
-</main>
+        <p onclick="toggle('about')">[ ABOUT ]</p>
+        <p onclick="toggle('contact')">[ CONTACT ]</p>
+      </nav>
       <main>
-        <h3>Welkom, Vault Dweller</h3>
+        <h3>Welcome, Vault Dweller <span class="cursor"></span></h3>
         <p>Website voor opleiding project.</p>
+
+        <div id="about" style="display:none">
+          <h3>// ABOUT //</h3>
+          <p>Hoi, ik heet Jonasz en mijn interesses zijn games, muziek en hobby-modelbouw. Ik heb ook interesse in programmeren. Deze website is mijn portfolio. Ik wil mezelf verbeteren tijdens mijn opleiding op niveau 4.</p>
+        </div>
+
+        <div id="contact" style="display:none">
+          <h3>// CONTACT //</h3>
+          <p>Mijn e-mail voor contact: 241498@student.scalda.nl</p>
+        </div>
+
+        <h3>// FAVORITE GAMES //</h3>
+        <p>Hier onder staan mijn favoriete spelletjes.</p>
+
+        <div class="card">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/287700/header.jpg" alt="MGS5">
+          <h4>Metal Gear Solid V</h4>
+        </div>
+        <div class="card">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg" alt="Cyberpunk">
+          <h4>Cyberpunk 2077</h4>
+        </div>
+        <div class="card">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/49520/header.jpg" alt="Borderlands 2">
+          <h4>Borderlands 2</h4>
+        </div>
+        <div class="card">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/8870/header.jpg" alt="Bioshock Infinite">
+          <h4>Bioshock Infinite</h4>
+        </div>
+        <div class="card">
+          <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/374320/header.jpg" alt="Dark Souls 3">
+          <h4>Dark Souls 3</h4>
+        </div>
       </main>
       <footer>
         <p>VAULT-TEC CORP © 2077</p>
       </footer>
     </div>
+
+    <script>
+      function toggle(id) {
+        var el = document.getElementById(id);
+        if (el.style.display === 'none') {
+          el.style.display = 'block';
+        } else {
+          el.style.display = 'none';
+        }
+      }
+
+      const lines = [
+        "VAULT-TEC INDUSTRIES",
+        "ROBCO INDUSTRIES UNIFIED OPERATING SYSTEM",
+        "COPYRIGHT 2075-2077 ROBCO INDUSTRIES",
+        "------------------------",
+        "LOADING SYSTEM...",
+        "CHECKING MEMORY... OK",
+        "CHECKING HARD DRIVE... OK",
+        "INITIALIZING VAULT SYSTEMS... OK",
+        "WELCOME TO VAULT-TEC TERMINAL",
+        "------------------------",
+        "ACCESS GRANTED",
+      ];
+
+      let lineIndex = 0;
+      let charIndex = 0;
+      const boottext = document.getElementById("boottext");
+
+      function type() {
+        if (lineIndex < lines.length) {
+          if (charIndex < lines[lineIndex].length) {
+            boottext.innerHTML += lines[lineIndex][charIndex];
+            charIndex++;
+            setTimeout(type, 30);
+          } else {
+            boottext.innerHTML += "<br>";
+            lineIndex++;
+            charIndex = 0;
+            setTimeout(type, 200);
+          }
+        } else {
+          setTimeout(() => {
+            document.getElementById("bootscreen").style.display = "none";
+          }, 1000);
+        }
+      }
+
+      type();
+    </script>
   </body>
 </html>
-<main>
-  <h3>Welkom, Vault Dweller <span class="cursor"></span></h3>
-  <p>Hier onder staat mijn favoriet spelltjes.</p>
-  ...
-</main>
-<h3>// FAVORITE GAMES //</h3>
-
-<div class="card">
-  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/287700/header.jpg" alt="MGS5">
-  <h4>Metal Gear Solid V</h4>
-</div>
-
-<div class="card">
-  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg" alt="Cyberpunk">
-  <h4>Cyberpunk 2077</h4>
-</div>
-
-<div class="card">
-  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/49520/header.jpg" alt="Borderlands 2">
-  <h4>Borderlands 2</h4>
-</div>
-
-<div class="card">
-  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/8870/header.jpg" alt="Bioshock Infinite">
-  <h4>Bioshock Infinite</h4>
-</div>
-
-<div class="card">
-  <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/374320/header.jpg" alt="Dark Souls 3">
-  <h4>Dark Souls 3</h4>
-</div>
