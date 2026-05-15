@@ -83,3 +83,13 @@ nav p:hover {
     margin: 0;
     font-size: 13px;
 }
+a {
+    color: #00ff00;
+    text-decoration: none;
+    font-family: monospace;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ff00;
+}
